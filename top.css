@@ -14,7 +14,7 @@
 #top-box {
   position: relative;
   height: 53px;
-  background-color: black;
+  background-color: #1f1e1e;
   width: 100%;
 }
 
@@ -52,7 +52,7 @@
 }
 
 section header {
-  background-color: black;
+  background-color: #1f1e1e;
   width: 100%;
   height: 53px;
   margin: 0 auto;
@@ -152,7 +152,7 @@ section ul li a {
 footer {
   width: 100%;
   height: 50px;
-  background-color: black;
+  background-color: #131313;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -162,4 +162,11 @@ footer {
 footer p {
   padding: 15px;
   font-size: 12px;
+}
+
+@media screen and (max-width: 640px) {
+  #hamburger-menu {
+    right: 0;
+    background: yellow;
+  }
 }
