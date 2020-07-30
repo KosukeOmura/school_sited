@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 * {
     margin:0;
     a{
@@ -25,20 +27,46 @@
     }
     //ハンバーガーメニュー部分
     #hamburger-menu{
-        position:absolute;
+        display:block;
+        height:53px;
+        width: 70px;
+        background:pink;
+        position: fixed;
         top:0;
         left:0;
+        .border1 {
+            height: 1px;
+            width: 60%;
+            background: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            transition: 0.3s;
 
-        a{
-            display:block;
-            width:53px;
-            height:38px;
-            padding-top:15px;
-            cursor:pointer;
-            text-align:center;
+            &:nth-of-type(1){
+                transform: translate(-50%, -15px);
+            }
+            &:nth-of-type(3){
+                transform: translate(-50%, 15px);
+            }
         }
     }
 }
+
+
+main {
+    height: 200vh;
+    nav {
+        opacity:0;
+        visibility: hidden;
+        &:active {
+            opacity:1;
+            visibility:visible;
+        }
+    }
+}
+
 
 //メインbg画像
 #bg-image {
