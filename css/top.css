@@ -47,7 +47,7 @@
 #top-box #hamburger-menu {
   display: block;
   height: 53px;
-  width: 70px;
+  width: 40px;
   position: fixed;
   top: 0;
   right: 0;
@@ -55,7 +55,7 @@
 }
 
 #top-box #hamburger-menu .border1 {
-  height: 3px;
+  height: 2px;
   width: 60%;
   background: white;
   position: absolute;
@@ -66,17 +66,19 @@
 }
 
 #top-box #hamburger-menu .border1:nth-of-type(1) {
-  transform: translate(-50%, -15px);
+  transform: translate(-50%, -10px);
 }
 #top-box #hamburger-menu.active .border1:nth-of-type(1) {
-  transform: rotate(45deg) translate(-50%, 20px);
+  transform: rotate(45deg) translate(-50%, 13px);
+  background: black;
 }
 
 #top-box #hamburger-menu .border1:nth-of-type(3) {
-  transform: translate(-50%, 15px);
+  transform: translate(-50%, 8px);
 }
 #top-box #hamburger-menu.active .border1:nth-of-type(3) {
-  transform: rotate(-45deg) translate(-50%, -21px);
+  transform: rotate(-45deg) translate(-50%, -13px);
+  background: black;
 }
 
 #top-box #hamburger-menu.active .border1:nth-of-type(2) {
@@ -85,35 +87,31 @@
 
 
 nav {
+  overflow: auto;
   z-index:2;
   opacity: 0;
-  visibility: hidden;
   transition: .3s;
   position: fixed;
-  padding:200px 0px 100px;
   top:0;
   right:0;
-  background:gray;
+  background:white;
   width:300px;
   height: 100vh;
-  max-height:100vh;
-  overflow:auto;
+  max-height:100%;
   box-shadow: 3px 0 0 black;
+  visibility: hidden;
 }
-/* nav ul {
-  display:flex;
-  align-items:center;
-  flex-direction: column;
-  justify-content:center;
-  height: 200px;
-} */
+nav ul {
+padding:0;
+}
 
 nav ul li {
   text-align: center;
+  margin-bottom:30%;
 }
 
 nav ul li:not(first-of-type) {
-  margin-top:20px;
+  margin-top:50px;
 }
 
 nav.active {
@@ -121,6 +119,27 @@ nav.active {
   visibility: visible;
 }
 
+nav p{
+  cursor:pointer;
+}
+
+/* ナビの子ナビ */
+
+#Childy{
+  display:none;
+  background-color:black;
+  box-shadow: 3px 0 0 black;
+  color:black;
+  transition: .3s;
+}
+#Childy li {
+  margin:0;
+}
+#Childy.active {
+  display:inline;
+}
+
+/* ナビの子ナビ 終了*/
 #bg-image {
   width: 100%;
 }
@@ -243,7 +262,5 @@ footer p {
 }
 
 @media screen and (max-width: 640px) {
-  #hamburger-menu {
-    right: 0;
-  }
+
 }
